@@ -1,0 +1,30 @@
+.card{
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow:  18px 15px 17px #414141;
+    width: 90%;
+    background-color: #0B486B;
+    color:#f2f2f2;
+}
+.btn{
+    border: 1px solid black;
+    box-shadow: 6px 6px 7px #083855;
+   width: 55px;
+}
+label{
+    margin-right: 2%;
+}
+input,select{
+    border: 2px solid black;
+    border-radius: 2vh;
+   
+   
+}
+
+
+.form-group{
+    margin-left: 3%;
+}
+.card-body{
+    font-size:small;
+}

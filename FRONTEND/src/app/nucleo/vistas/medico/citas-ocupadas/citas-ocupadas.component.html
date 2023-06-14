@@ -1,0 +1,41 @@
+<app-cabecera></app-cabecera>
+<div class="container-fluid">
+  <div class="row  mt-2">
+    <h2 class="">Citas Asignadas</h2>
+    
+      <div class="row  justify-content-between">
+        <div class="col-12  col-md-3">
+          <label  for="Fecha">Nueva Fecha</label>
+          <input type="datetime-local" name="Fecha" id="Fecha" [(ngModel)]="this.nuevaFecha" >
+        </div>
+        <div class="col-12 col-md-3">
+          <label  for="nombre">Buscar Nombre</label>
+          <input type="text" name="nombre" [(ngModel)]="nombrePacienteFiltro" placeholder="Filtrar por nombre del paciente" (input)="filtrarCitasPorNombrePaciente()">
+        </div>
+      </div>
+  </div>
+  <div class="form-group">
+    <div class="row ">
+      <div class="col-md-4" *ngFor="let cita of getCitasPaginadas()">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title d-flex justify-content-center">{{ cita!.fecha }} </h5>
+            <span class="especialidad d-flex justify-content-center"> Paciente: {{ cita!.nombre_paciente }}</span>
+            <div class="row d-flex justify-content-around">
+            <button class="btn btn-primary col-3" (click)="modificarCita(cita!.id)"><img src="../../../../../assets/edit.svg" alt="editar"></button>
+            <button class="btn btn-danger col-3 " (click)="borrarCita(cita!.id)"><img src="../../../../../assets/trash.svg" alt="borrar"></button>
+          </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>  
+    <div class="row mb-5">
+      <mat-paginator  [pageSize]="citasPorPagina"
+    [length]="totalCitas" (page)="onPageChange($event)" hidePageSize>
+  </mat-paginator>
+  </div>
+
+
+</div>
+  <app-footer></app-footer>

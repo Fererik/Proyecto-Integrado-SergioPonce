@@ -1,0 +1,54 @@
+<app-cabecera></app-cabecera>
+<div class="container-fluid">
+    <div class="row" id="titulo">
+        <div class="col-12 justify-content-center align-items-center d-flex">
+            <h1>Administración</h1>
+        </div>
+        <hr>
+    </div>
+    <div class="row" id="cuerpo">
+        <div class="col-12">
+            <div class="row justify-content-center align-items-center d-flex">
+                <div class="col-9 justify-content-start align-items-center d-flex">
+                    <h3>Solicitud de Pacientes</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center d-flex">
+                <div class="col-9">
+                    <div class="tabla table-scrollable">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th><span class="d-flex justify-content-center align-items-center">Id</span></th>
+                                    <th><span class="d-flex justify-content-center align-items-center">Nombre</span></th>
+                                    <th><span class="d-flex justify-content-center align-items-center">Apellidos</span></th>
+                                    <th><span class="d-flex justify-content-center align-items-center"><input  type="text" placeholder="Email" [(ngModel)]="buscador" (change)="buscar()" /></span></th>
+                                    <th><span class="d-flex justify-content-center align-items-center">Num Poliza</span></th>
+                                    <th><span class="d-flex justify-content-center align-items-center">Modificar</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let paciente of this.pacientesAMostrar">
+                                    <td><span class="d-flex justify-content-center align-items-center">{{paciente.id}}</span></td>
+                                    <td><span class="d-flex justify-content-center align-items-center">{{paciente.nombre}}</span></td>
+                                    <td><span class="d-flex justify-content-center align-items-center">{{paciente.apellidos}}</span></td>
+                                    <td><span class="d-flex justify-content-center align-items-center">{{paciente.email}}</span></td>
+                                    <td><span class="d-flex justify-content-center align-items-center">{{paciente.numPoliza}}</span></td>
+                                    <td>
+                                        <span class="d-flex justify-content-center align-items-center">
+                                            <input type="button" value="Aprobar" name="Aprobar" id="Aprobar" (click)="aprobarPaciente(paciente.id)" class="modificar borrar">
+                                            <input type="button" value="Desestimar" name="desestimar" id="desestimar" (click)="desestimarPaciente(paciente.id)"  class="modificar editar">
+                                        </span>
+                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 ">
+        <img id="logtipoNegro" src="../../../../assets/img/logo.png"
+          alt="Logo Eviden Black">
+      </div>
+      <div class="col-4 justify-content-center d-flex align-items-center">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item px-5">
+              <a *ngIf="rol=='administrador'" class="nav-link" routerLinkActive="active" routerLink="/admin-pacientes">Pacientes
+              </a>
+              <a *ngIf="rol=='medico'" class="nav-link" routerLinkActive="active" routerLink="/medico-citas">Citas Asignadas
+              </a>
+              <a *ngIf="rol=='paciente'" class="nav-link" routerLinkActive="active" routerLink="/paciente-citas">Mis citas
+              </a>
+            </li>
+            <li class="nav-item px-5">
+              <a *ngIf="rol=='administrador'" class="nav-link" routerLinkActive="active" routerLink="/inicio-admin">Usuarios
+              </a>
+              <a *ngIf="rol=='medico'" class="nav-link" routerLinkActive="active" routerLink="/inicio-medico">Crear citas
+              </a>
+              <a *ngIf="rol=='paciente'" class="nav-link" routerLinkActive="active" routerLink="/inicio-paciente">Solicitar Cita
+              </a>
+            </li>
+            <li class="nav-item px-5">
+              <a *ngIf="rol=='administrador'" class="nav-link" routerLinkActive="active" routerLink="/admin-medicos">Medicos
+              </a>
+              <a *ngIf="rol=='medico'" class="nav-link" routerLinkActive="active" routerLink="/medico-disponibilidad">Citas no Asignadas
+              </a>
+              <a *ngIf="rol=='paciente'" class="nav-link" routerLinkActive="active" routerLink="/paciente-historico">Historial Citas
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-4 justify-content-end align-items-center d-flex">
+        <div ngbDropdown class="dropdown">
+          <span ngbDropdownToggle>
+            <img src="assets/img/Account.svg" alt="Imagen de perfil" class="svg-icon" id="imagenPerfil">
+          </span>
+          <ul class="lista" ngbDropdownMenu>
+            <a routerLink="/perfil" class="text-decoration-none">
+              <li ngbDropdownItem>
+                Bienvenido,<br>
+                <a routerLink="/perfil">{{correoUser}}</a>
+              </li>
+            </a>
+            <li ngbDropdownItem (click)="cerrarSesion()"><a><span>Cerrar Sesion</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

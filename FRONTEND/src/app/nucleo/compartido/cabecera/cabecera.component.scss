@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+  border-bottom: 2px solid #7fa77f;
+  background-color: white;
+  box-shadow: 24px 24px 47px #cfcfcf, -24px -24px 47px #ffffff;
+}
+
+#contenedorCabecera {
+  border-bottom: 100%;
+  border-color: #7fa77f;
+}
+
+
+// Imagenes:
+#logtipoNegro {
+  width: 60%;
+  margin-left: 4%;
+}
+  
+@media (min-width:996px) {
+  #logtipoNegro {
+    width: 25%;
+    margin-left: 4%;
+  }
+}
+
+#imagenPerfil {
+  width: 80px;
+  margin-right: 20px;
+}
+
+#cerrarSesion {
+  width: 185px;
+  cursor: pointer;
+}
+
+#nombreUsuario{
+  width: 2px;
+}
+
+.desplegable{
+  transform: translate3d(-100px, 10px, 0px);
+}
+
+.active {
+  font-weight: bolder;
+}
+
+.navbar-nav a {
+  position: relative;
+}
+
+.navbar-nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #A8DBA8;
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.navbar-nav a:hover::before {
+  transform: scaleX(1);
+}
+
+.navbar-nav[data-animation="to-left"] a::before {
+  transform-origin: right;
+}
+.navbar-nav[data-animation="center"] a::before {
+  transform-origin: center;
+}
+
+.navbar-nav[data-animation="bonus"] a::before {
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+}
+.navbar-nav[data-animation="bonus"] a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+}
+
+.dropdown-toggle {
+  color:#A8DBA8;
+  cursor: pointer;
+  &::after{
+      content: none;
+  }
+}
+
+
+.lista {
+
+  transform: translate3d(-65%, 0px, 0px) !important;
+  
+  & li{
+      padding-right:50px;
+      cursor: pointer;
+      &:hover{
+          background-color: #ececed;
+      }
+
+      &:hover> a span{
+        color:red;
+      }
+  } 
+}
+

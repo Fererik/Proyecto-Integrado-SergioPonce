@@ -1,0 +1,40 @@
+<app-cabecera></app-cabecera>
+<div class="container-fluid">
+  <div class="row  mt-2">
+    <h2 class="col-3">Historico</h2>
+    
+    <div class="d-flex justify-content-end">
+       <label for="Especialidad">Especialidad</label>
+        <select class="h-100"  name="Especialidad" id="Especialidad" [(ngModel)]="especialidad" (change)="aplicarFiltros()">
+            <option value="">----</option>
+            <option value="Medico General">Medico General</option>
+            <option value="Dentista">Dentista</option>
+            <option value="Nutricionista">Nutricionista</option>
+            <option value="Oftalmólogia">Oftalmólogia</option>
+        </select>
+      </div>
+  </div>
+  <div class="form-group">
+    <div class="row ">
+      <div class="col-md-4" *ngFor="let cita of getCitasPaginadas()">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title d-flex justify-content-center">{{ cita!.fecha }} </h5>
+            <span class="especialidad d-flex justify-content-center">Especialidad: {{ cita!.especialidad }} Medico: {{ cita!.nombre_medico }}</span>
+            <div class="row d-flex justify-content-around">
+                <button class="btn btn-success col-3 " (click)="generarPDF(cita)"><img src="../../../../../assets/download.svg" alt="borrar"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>  
+    <div class="row mb-5">
+      <mat-paginator  [pageSize]="citasPorPagina"
+    [length]="totalCitas" (page)="onPageChange($event)" hidePageSize>
+  </mat-paginator>
+  </div>
+
+
+</div>
+  <app-footer></app-footer>

@@ -1,0 +1,40 @@
+
+footer {
+  background-color: #002D3C;
+  position: absolute;
+
+  width: 100%;
+}
+@media (min-width: 992px) {
+  footer {  
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo{
+  width:80%;
+}
+
+.colorBlanco {
+  color: #ffffff;
+}
+
+#colorBlancofondo{
+  background-color: #ffffff;
+   color: black;
+
+}
+
+#widthImg{
+  width: 5%;
+}
+@media (max-width: 767px) and (min-width: 310px) {#logo{width:60%;}}

@@ -1,0 +1,103 @@
+h3,
+label {
+    color: white;
+}
+
+#logtipoNegro {
+    width:20vw;
+    margin-top: 2%;
+    margin-right: 2%;    
+}
+
+
+
+
+#login {
+    border-radius: 5px;
+    border: 2px solid black;
+    box-shadow: 18px 15px 17px #606060,
+        -25px -15px 17px #ffffff;
+    margin-top: 2%;
+    margin-bottom:10vh;
+    height: fit-content;
+    background-color: #0B486B;
+
+    & header {
+        padding-top: 40px;
+        height: auto;
+
+        & hr {
+            width: 130%;
+            background-color: black;
+        }
+    }
+
+    & .cuerpo {
+        & label {
+            padding: 0;
+            margin-top: 3%;
+        }
+
+        & input,select {
+            
+            margin-top: 1%;
+            height: 3em;
+            border: 3px solid black;
+            border-radius: 2vh;
+            width: 100%;
+            
+         
+            
+
+            &::placeholder {
+                text-align: center;
+                opacity: 50%;
+            }
+        
+
+        
+
+            & a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: white;
+                }
+            }
+        }   
+    }
+    & #boton{
+       
+        border: 1px solid black;
+        padding: 1.5vh;
+        border-radius: 3px;
+        background-color: #A8DBA8;
+        
+        cursor: pointer;
+        &:hover{
+            transition: 1.5s;
+            background-color: #CFF09E;
+        }
+    }
+
+    & a:any-link{
+        text-decoration: none;
+        color:white;
+        &:hover{
+            text-decoration: underline;
+           
+        }
+    }
+
+    .form-check-label {
+        color: white;
+
+        & .left{
+            float: left;
+        }
+    }
+    .form-switch .form-check-input:checked{
+        background-color: #A8DBA8;
+    }
+}

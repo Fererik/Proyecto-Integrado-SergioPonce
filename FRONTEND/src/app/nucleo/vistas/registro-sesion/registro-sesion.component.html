@@ -1,0 +1,112 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-start align-items-center">
+        <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 offset-1 offset-sm-2 offset-md-3 offset-lg-0">
+            <div class="text-center">
+                <img id="logtipoNegro" src="../../../../assets/img/logo.png"
+                    alt="Logo Eviden Negro">
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-8 col-lg-6" id="login" >
+            <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                    <header>
+                        <h3 class="d-flex justify-content-center">REGISTRARSE</h3>
+                    </header>   
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="d-inline-block me-1 form-check-label">Paciente</div>
+                        <div class="form-check form-switch d-inline-block">
+                            <input type="checkbox" [(ngModel)]="this.esMedico" (ngModelChange)="usuarioCambiado()" class="form-check-input" id="site_state" style="cursor: pointer;">
+                            <label for="site_state" class="form-check-label">Medico</label>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pt-3 cuerpo justify-content-center">
+                <div class="col-12 col-lg-5  ">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <div>
+                            <input type="text" name="nombre" *ngIf="!this.esMedico" [(ngModel)]="paciente.nombre" id="nombre" placeholder="Daniel">
+                            <input type="text" name="nombre" *ngIf="this.esMedico" [(ngModel)]="medico.nombre" id="nombre" placeholder="Daniel">
+                       
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 ">
+                    <div>
+                        <label for="apellido">Apellidos</label>
+                        <div>
+                            <input type="text" name="apellidos" *ngIf="!this.esMedico" [(ngModel)]="paciente.apellidos" id="apellidos"  placeholder="García Serrano">
+                            <input type="text" name="apellidos" *ngIf="this.esMedico" [(ngModel)]="medico.apellidos" id="apellidos"  placeholder="García Serrano">
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3 cuerpo justify-content-center">
+                
+                <div class="col-12 col-lg-5 ">
+                    <div>
+                        <label for="email">Email</label>
+                        <div>
+                            <input type="email" name="email" id="email" *ngIf="!this.esMedico" [(ngModel)]="paciente.email"  placeholder="user@mail.net">
+                            <input type="email" name="email" id="email" *ngIf="this.esMedico" [(ngModel)]="medico.email"  placeholder="user@mail.net">
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!this.esMedico" class="col-12 col-lg-5">
+                    <div>
+                        <label for="Npoliza">Numero poliza</label>
+                        <div>
+                            <input type="text" name="Npoliza" id="Npoliza" [(ngModel)]="paciente.numPoliza"  placeholder="77853254244L">
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="this.esMedico" class="col-12 col-lg-5">
+                    <div>
+                        <label for="Especialidad">Especialidad</label>
+                        <div>
+                            <select name="Especialidad" id="Especialidad" [(ngModel)]="medico.especialidad">
+                              <option value="Medico General">Medico General</option>
+                              <option value="Dentista">Dentista</option>
+                              <option value="Nutricionista">Nutricionista</option>
+                              <option value="Oftalmólogia">Oftalmólogia</option>
+                            </select></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-3 cuerpo justify-content-center">
+                <div class="col-12 col-lg-5">
+                    <div>
+                        <label for="contrasenna">Contraseña</label>
+                        <div>
+                            <input type="password" name="contrasenna" id="contrasenna" *ngIf="!this.esMedico" [(ngModel)]="paciente.password"  placeholder="contraseña">
+                            <input type="password" name="contrasenna" id="contrasenna" *ngIf="this.esMedico" [(ngModel)]="medico.password"  placeholder="contraseña">
+                        
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+            
+            <div class="col-12 d-flex justify-content-center">
+                <div class="row pt-5 d-flex justify-content-center align-items-center">
+                    <div id="boton" (click)="registrarse()">
+                        Registrarme
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-center" id="cuerpo">
+                <div class="m-3">
+                    <a routerLink="" class="d-flex justify-content-center">¿Tienes ya una cuenta?</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
